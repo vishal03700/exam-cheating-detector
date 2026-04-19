@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExamCheatingDetector.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29e7b04cd315a331ffa39a77b0e3fcae09d5bb07")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+935e56770f5657b45ed1c7f40ec282cbe48fdc3c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExamCheatingDetector.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExamCheatingDetector.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
