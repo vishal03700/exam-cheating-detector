@@ -1,0 +1,6 @@
+@ExamCheatingDetector.API_HostAddress = http://localhost:5022
+
+GET {{ExamCheatingDetector.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
