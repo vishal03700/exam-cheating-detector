@@ -23,10 +23,12 @@ public class AuthService
     public async Task<LoginResponse?> LoginAsync(LoginRequest request)
     {
         var user = await _db.Users
-            .FirstOrDefaultAsync(u => u.Email == request.Email
-                                   && u.Password == request.Password);
+            .FirstOrDefaultAsync(u => u.Email == request.Email);
 
         if (user == null) return null;
+
+        bool passwordValid = BCrypt.Net.BCrypt.Verify(request.Password, user.Password);
+        if (!passwordValid) return null;
 
         var token = GenerateToken(user);
 

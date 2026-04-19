@@ -137,3 +137,4 @@
 /Users/vishal/Desktop/cert/hrblock/exam-cheating-detector/api/src/ExamCheatingDetector.API/obj/Debug/net8.0/ExamCheatingDetector.API.genruntimeconfig.cache
 /Users/vishal/Desktop/cert/hrblock/exam-cheating-detector/api/src/ExamCheatingDetector.API/obj/Debug/net8.0/ref/ExamCheatingDetector.API.dll
 /Users/vishal/Desktop/cert/hrblock/exam-cheating-detector/api/src/ExamCheatingDetector.API/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/vishal/Desktop/cert/hrblock/exam-cheating-detector/api/src/ExamCheatingDetector.API/bin/Debug/net8.0/BCrypt.Net-Next.dll

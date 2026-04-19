@@ -3,7 +3,6 @@
 -- Database Schema
 -- =============================================
 
--- 1. Users Table
 CREATE TABLE Users (
     Id          INT PRIMARY KEY IDENTITY(1,1),
     FullName    NVARCHAR(100)  NOT NULL,
@@ -13,7 +12,6 @@ CREATE TABLE Users (
     CreatedAt   DATETIME       NOT NULL DEFAULT GETDATE()
 );
 
--- 2. Exams Table
 CREATE TABLE Exams (
     Id          INT PRIMARY KEY IDENTITY(1,1),
     StudentId   INT            NOT NULL FOREIGN KEY REFERENCES Users(Id),
@@ -22,7 +20,6 @@ CREATE TABLE Exams (
     Status      NVARCHAR(20)   NOT NULL DEFAULT 'Active' CHECK (Status IN ('Active', 'Completed'))
 );
 
--- 3. ActivityLogs Table
 CREATE TABLE ActivityLogs (
     Id          INT PRIMARY KEY IDENTITY(1,1),
     ExamId      INT            NOT NULL FOREIGN KEY REFERENCES Exams(Id),
@@ -31,7 +28,6 @@ CREATE TABLE ActivityLogs (
     LoggedAt    DATETIME       NOT NULL DEFAULT GETDATE()
 );
 
--- 4. RiskScores Table
 CREATE TABLE RiskScores (
     Id          INT PRIMARY KEY IDENTITY(1,1),
     ExamId      INT            NOT NULL UNIQUE FOREIGN KEY REFERENCES Exams(Id),
@@ -39,7 +35,6 @@ CREATE TABLE RiskScores (
     UpdatedAt   DATETIME       NOT NULL DEFAULT GETDATE()
 );
 
--- 5. Alerts Table
 CREATE TABLE Alerts (
     Id              INT PRIMARY KEY IDENTITY(1,1),
     ExamId          INT            NOT NULL FOREIGN KEY REFERENCES Exams(Id),
@@ -50,10 +45,11 @@ CREATE TABLE Alerts (
 );
 
 -- =============================================
--- Seed Data — Sample Users
+-- Seed Data
+-- Passwords are BCrypt hashed
+-- Student@123 / Admin@123
 -- =============================================
 
 INSERT INTO Users (FullName, Email, Password, Role) VALUES
-('John Student', 'student@exam.com', 'hashed_password_here', 'Student'),
-('Admin User',   'admin@exam.com',   'hashed_password_here', 'Admin');
-
+('John Student', 'student@exam.com', '$2a$11$TGKkBMDNKBpnEDqkAGpVbOE5v1k3Hy6Z8aLJr2OhH/X7VTGMzj4Ky', 'Student'),
+('Admin User',   'admin@exam.com',   '$2a$11$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi',   'Admin');
