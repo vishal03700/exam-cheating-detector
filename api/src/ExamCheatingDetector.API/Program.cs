@@ -43,10 +43,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Repositories
 builder.Services.AddScoped<ExamRepository>();
+builder.Services.AddScoped<ActivityLogRepository>();
+builder.Services.AddScoped<RiskScoreRepository>();
+builder.Services.AddScoped<AlertRepository>();
 
 // Services
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<ExamService>();
+builder.Services.AddScoped<ActivityService>();
 
 // JWT Authentication
 var jwtKey = builder.Configuration["Jwt:Key"]!;
